@@ -1,17 +1,12 @@
--- a simple telnet server
-s=net.createServer(net.TCP,180)
-s:listen(23,function(c)
-   function s_output(str)
-      if(c~=nil)
-         then c:send(str)
-      end
-   end
-   node.output(s_output, 0)   -- re-direct output to function s_ouput.
-   c:on("receive",function(c,l)
-      node.input(l)           -- works like pcall(loadstring(l)) but support multiple separate line
-   end)
-   c:on("disconnection",function(c)
-      node.output(nil)        -- un-regist the redirect output function, output goes to serial
-   end)
-   print("Welcome to NodeMcu world.")
-end)
+-- a simple http server
+handleRquest =function(conn,payload)
+  jsonPayload = cjson.decode(payload);
+  for k,v in pairs(t) do print(k,v) end
+end
+
+connectionHandler =function(conn)
+    conn:on("receive",handleRquest(conn,payload))
+end
+
+srv=net.createServer(net.TCP)
+srv:listen(80,connectionHandler(conn));
