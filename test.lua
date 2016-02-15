@@ -10,8 +10,12 @@ segmentDegrees = function(ledCount)
   return 360 / ledCount;
 end
 
-generateString =function(ledCount,direction,distance)
 
+
+
+generateString =function(ledCount,direction,distance)
+  
+end
 
 ledCount=24;
 srv=net.createServer(net.TCP)
