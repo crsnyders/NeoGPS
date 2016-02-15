@@ -1,3 +1,5 @@
+function round(num) return math.floor(num+.5) end
+
 HSVtoRGB = function(h,s,v)
   r = 0
   g =0
@@ -19,7 +21,7 @@ HSVtoRGB = function(h,s,v)
     r = v;
     g = v;
     b = v;
-    return {math.floor(r*255),math.floor(g*255),math.floor(b*255)}
+    return {round(r*255),round(g*255),round(b*255)}
   end
 
   h = h/100;
@@ -43,5 +45,5 @@ HSVtoRGB = function(h,s,v)
     r = v; g = p; b = q;
   end
 
-  return {math.floor(r*255),math.floor(g*255),math.floor(b*255)}
+  return {round(r*255),round(g*255),round(b*255)}
 end

@@ -1,0 +1,1 @@
+dofile("consts.lua");
