@@ -1,35 +1,28 @@
-dofile("hsvtorgb.lua")
-numberOfLeds = 24;
-degreeStep = 360/numberOfLeds;
-leds=nil
+dofile("consts.lua")
+dofile("hsvTorgb.lua")
+dofile("mod.lua")
 
-function mod(a,b)
-  a = a - math.floor(a/b)*b
-return a;
-end
 
-function heading(direction,distance,degreeStep)
+function heading(direction,distance,degreeStep,numberOfLeds)
 
   directionLed = direction / degreeStep;
   maxright = directionLed + 6;
-  maxLeft = mod(directionLed - 6,24);
+  maxLeft = mod(directionLed - 6,numberOfLeds);
 
-  print(maxLeft,directionLed,maxright)
-end
+  if(maxLeft < maxright) then
+    startIndex = maxLeft;
+    endIndex = maxright;
+  else
+    startIndex = maxLeft;
+    endIndex = maxLeft;
+  end
 
-
-
-
-for i=0,360,degreeStep
-do
-    led = hsvToRgb(i,100,15)
-    if leds == nil then
-        leds = string.char(led[1])..string.char(led[2])..string.char(led[3])
-    else
-    leds = leds..string.char(led[1])..string.char(led[2])..string.char(led[3])
+  for i=0,numberOfLeds do
+    if(i > endIndex or i< startIndex) then
+      print(i)
     end
+  end
 end
 
-print(leds)
 
-ws2812.write(4, leds)
+ws2812.write(4, basic())

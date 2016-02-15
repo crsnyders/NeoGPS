@@ -1,4 +1,4 @@
-hsvToRgb = function(h,s,v)
+HSVtoRGB = function(h,s,v)
   r = 0
   g =0
   b =0;
