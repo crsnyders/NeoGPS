@@ -6,15 +6,8 @@ handleRquest =function(conn,payload)
    end
  end
 
-segmentDegrees = function(ledCount)
-  return 360 / ledCount;
-end
-
-
-
-
 generateString =function(ledCount,direction,distance)
-  
+
 end
 
 ledCount=24;

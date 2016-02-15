@@ -1,6 +1,26 @@
 dofile("hsvtorgb.lua")
+numberOfLeds = 24;
+degreeStep = 360/numberOfLeds;
 leds=nil
-for i=0,360,15
+
+function mod(a,b)
+  a = a - math.floor(a/b)*b
+return a;
+end
+
+function heading(direction,distance,degreeStep)
+
+  directionLed = direction / degreeStep;
+  maxright = directionLed + 6;
+  maxLeft = mod(directionLed - 6,24);
+
+  print(maxLeft,directionLed,maxright)
+end
+
+
+
+
+for i=0,360,degreeStep
 do
     led = hsvToRgb(i,100,15)
     if leds == nil then
