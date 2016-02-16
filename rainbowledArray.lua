@@ -1,12 +1,10 @@
 dofile('hsvTorgb.lua')
 function rainbowLEDArray(degreeStep,brightness)
 leds={}
-  for i=0,360,degreeStep
+  for i=15,360,degreeStep
   do
       led = HSVtoRGB(i,100,brightness)
-      table.insert(leds,led[1])
-      table.insert(leds,led[2])
-      table.insert(leds,led[3])
+      table.insert(leds,led)
   end
   return leds;
 end

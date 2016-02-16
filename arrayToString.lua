@@ -5,9 +5,9 @@ function arrayToString(array)
     do
 
         if arrayString ==nil then
-            arrayString = string.char(array[i])
+            arrayString = string.char(array[i][1])..string.char(array[i][2])..string.char(array[i][3])
         else
-            arrayString = arrayString..string.char(array[i])
+            arrayString = string.char(array[i][1]),string.char(array[i][2]),string.char(array[i][3])
         end
     end
 
