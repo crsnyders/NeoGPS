@@ -1,5 +1,6 @@
+dofile('hsvTorgb.lua')
 function rainbowLED(degreeStep,brightness)
-
+leds=nil
   for i=0,360,degreeStep
   do
       led = HSVtoRGB(i,100,brightness)

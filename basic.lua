@@ -1,9 +1,8 @@
-dofile("hsvTorgb.lua")
-green = HSVtoRGB(120,100,15)--hsl(120, 100%, 70%)
-function basic()
+function basic(colour, start,endIndex)
+  leds =nil
   for i=0,numberOfLeds do
-    if (i>=0 and i<13) then
-      led = green;
+    if (i>=start and i<endIndex) then
+      led = colour;
     else
       led ={0,0,0}
     end
