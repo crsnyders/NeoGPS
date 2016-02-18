@@ -6,12 +6,12 @@ dofile("rotate.lua")
 --dofile("basic.lua")
 
 numberOfLeds = 24;
-degreeStep = 360/(numberOfLeds+1);
+degreeStep = 360/(numberOfLeds);
 brightness = 5
 leds=nil
 ledPin = 5
 
-green = HSVtoRGB(120,100,20)--hsl(120, 100%, 70%)
+--green = HSVtoRGB(120,100,20)--hsl(120, 100%, 70%)
 
 --ws2812.write(4, basic(green,0,13))
 counter = 0    
