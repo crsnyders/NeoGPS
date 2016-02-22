@@ -1,13 +1,11 @@
 dofile("rainbowledArray.lua")
 dofile("arrayToString.lua")
-dofile("hsvTorgb.lua")
 dofile("mod.lua")
-dofile("rotate.lua")
 --dofile("basic.lua")
 
 numberOfLeds = 24;
 degreeStep = 360/(numberOfLeds);
-brightness = 5
+brightness = 1
 leds=nil
 ledPin = 5
 
