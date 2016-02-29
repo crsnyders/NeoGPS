@@ -7,6 +7,8 @@ handleRquest =function(conn,payload)
     tmr.start(0)
     elseif jsonPayload["stop"] ==true then
     tmr.stop(0)
+    elseif jsonPayload["leds"] ~=nil then
+    ws2812.write(5, jsonPayload["leds"]);
     end
    end
  end
