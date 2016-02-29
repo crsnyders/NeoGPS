@@ -2,7 +2,12 @@
 handleRquest =function(conn,payload)
   if payload ~= nil then
     jsonPayload = cjson.decode(payload);
-    for k,v in pairs(jsonPayload) do print(k,v) end
+    --for k,v in pairs(jsonPayload) do print(k,v) end
+    if jsonPayload["start"] ==true then
+    tmr.start(0)
+    elseif jsonPayload["stop"] ==true then
+    tmr.stop(0)
+    end
    end
  end
 
